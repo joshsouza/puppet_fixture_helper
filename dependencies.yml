@@ -1,0 +1,21 @@
+---
+# All dependencies are pulled from the latest dev version in the Puppetfile repo
+# unless you specify a repo and version as shown below
+config:
+  puppetfile_repo: https://github.com/your/puppetfile.git
+  branch: v0.0.1
+  # To use the regexp, you must have one group that matches to an int/float
+  # As of right now it does NOT support semver (so 1.2 will be chosen over 1.19)
+  # I hope to fix this in the future, but it's a low priority for me
+  # branch_re: v?([0-9]+\.?[0-9]?)
+
+dependencies:
+  #- base:
+  #    repo: 'https://github.com/puppetlabs/puppetlabs-apache.git'
+  #    ref: '1.1.1'
+  - stdlib
+
+symlinks:
+  your_module_name/files: "../../../../files"
+  your_module_name/manifests: "../../../../manifests"
+  your_module_name/modules: "../../../../modules"
